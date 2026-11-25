@@ -17,7 +17,7 @@
     .lang-group{display:flex;gap:4px;background:#f1f5f9;padding:4px;border-radius:10px}
     .lang-btn{border:none;padding:5px 9px;border-radius:7px;font-size:11px;font-weight:700;cursor:pointer;background:transparent;color:#475569}
     .lang-btn.active{background:#047857;color:#fff}
-    .hero{background:radial-gradient(circle at top right,#059669 0%,#064e3b 45%,#022c22 100%);color:#fff;padding:56px 16px}
+    .hero{background:linear-gradient(135deg,rgba(4,47,36,0.90),rgba(6,78,59,0.82)),url('https://wikimedia.org') center/cover no-repeat;background-color:#064e3b;color:#fff;padding:56px 16px}
     .container{max-width:1100px;margin:0 auto}
     .badge{display:inline-block;background:rgba(16,185,129,0.2);border:1px solid rgba(52,211,153,0.4);color:#a7f3d0;font-size:12px;font-weight:700;padding:6px 14px;border-radius:99px;margin-bottom:18px}
     .hero h1{font-size:clamp(26px,5vw,44px);font-weight:800;line-height:1.15;margin-bottom:16px}
@@ -26,7 +26,7 @@
     .btn-primary{background:#10b981;color:#022c22;font-weight:800;padding:13px 22px;border-radius:12px;font-size:14px;display:inline-block}
     .btn-secondary{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);color:#fff;font-weight:700;padding:13px 22px;border-radius:12px;font-size:14px;display:inline-block}
     .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
-    .kpi-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);padding:18px;border-radius:16px}
+    .kpi-card{background:rgba(255,255,255,0.1);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);padding:18px;border-radius:16px}
     .kpi-num{font-size:24px;font-weight:800;color:#6ee7b7}
     .kpi-txt{font-size:12px;color:#e2e8f0;margin-top:4px}
     .section{padding:56px 16px}
@@ -34,7 +34,7 @@
     .sec-title{font-size:26px;font-weight:800;color:#0f172a;text-align:center;margin:6px 0 28px}
     .cards-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
     .card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 4px 14px rgba(15,23,42,0.05)}
-    .card-visual{height:180px;width:100%;display:block;background:#064e3b}
+    .card-img{width:100%;height:200px;object-fit:cover;display:block;background:#064e3b}
     .card-body{padding:20px}
     .pill{display:inline-block;background:#d1fae5;color:#065f46;font-size:11px;font-weight:800;padding:4px 10px;border-radius:99px;margin-bottom:10px}
     .card h3{font-size:18px;font-weight:800;color:#0f172a;margin-bottom:8px}
@@ -89,21 +89,12 @@
       </div>
     </div>
   </section>
-
   <section class="section container">
     <span class="sec-tag">Innovación Agronómica</span>
     <h2 class="sec-title">Tecnología de Precisión y Cultivo Sostenible</h2>
     <div class="cards-3">
       <div class="card">
-        <svg class="card-visual" viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice">
-          <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#064e3b"/><stop offset="100%" stop-color="#0d9488"/></linearGradient></defs>
-          <rect width="400" height="180" fill="url(#g1)"/>
-          <path d="M0 140 Q100 120 200 140 T400 135 L400 180 L0 180 Z" fill="#022c22" opacity="0.6"/>
-          <path d="M200 35 C200 35 162 82 162 108 A38 38 0 0 0 238 108 C238 82 200 35 200 35 Z" fill="#34d399" opacity="0.9"/>
-          <path d="M185 108 A16 16 0 0 0 202 124" stroke="#ecfdf5" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <circle cx="115" cy="95" r="6" fill="#6ee7b7" opacity="0.7"/><circle cx="285" cy="85" r="8" fill="#6ee7b7" opacity="0.6"/>
-          <text x="200" y="164" fill="#a7f3d0" font-size="12" font-weight="bold" text-anchor="middle" font-family="sans-serif">EC · pH · CIRCUITO CERRADO (-36% AGUA)</text>
-        </svg>
+        <img class="card-img" src="https://wikimedia.org" alt="Fertirrigación por goteo" />
         <div class="card-body">
           <span class="pill">01 · Circuito Cerrado</span>
           <h3>Fertirrigación de Precisión</h3>
@@ -112,15 +103,101 @@
       </div>
 
       <div class="card">
-        <svg class="card-visual" viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice">
-          <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0f172a"/><stop offset="100%" stop-color="#047857"/></linearGradient></defs>
-          <rect width="400" height="180" fill="url(#g2)"/>
-          <path d="M60 135 L60 85 L140 50 L220 85 L300 50 L340 75 L340 135 Z" fill="none" stroke="#6ee7b7" stroke-width="3"/>
-          <line x1="140" y1="50" x2="140" y2="135" stroke="#34d399" stroke-width="1.5" stroke-dasharray="4 4"/>
-          <line x1="220" y1="85" x2="220" y2="135" stroke="#34d399" stroke-width="1.5" stroke-dasharray="4 4"/>
-          <circle cx="315" cy="36" r="16" fill="#fbbf24" opacity="0.9"/>
-          <text x="200" y="164" fill="#a7f3d0" font-size="12" font-weight="bold" text-anchor="middle" font-family="sans-serif">INVERNADERO MULTITÚNEL · CLIMA VPD/PAR</text>
-        </svg>
+        <img class="card-img" src="https://wikimedia.org" alt="Invernadero tecnificado" />
         <div class="card-body">
           <span class="pill">02 · Clima VPD / PAR</span>
           <h3>Control Climático Automatizado</h3>
+          <p>Ventanas cenitales y pantallas térmicas plegables que reducen el estrés térmico un 50% para cosecha contraestación.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-img" src="https://wikimedia.org" alt="Judía Verde Gina Phaseolus vulgaris" />
+        <div class="card-body">
+          <span class="pill">03 · B2B Km 0</span>
+          <h3>Judía Verde (Var. Gina) y Trazabilidad QR</h3>
+          <p>Suministro directo en menos de 24h a Mercabarna y cadenas de distribución con pasaporte digital de residuo cero.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="simulador" class="sim-sec">
+    <div class="container">
+      <h2 class="sec-title" style="color:#fff">Simulador de Eficiencia Hídrica</h2>
+      <div class="sim-box">
+        <div>
+          <label style="font-size:12px;font-weight:700;color:#6ee7b7">SUPERFICIE DE INVERNADERO (m²)</label>
+          <input type="range" id="areaRange" min="2000" max="50000" step="1000" value="8000" oninput="updateSim()" />
+          <div id="areaDisplay" style="font-size:20px;font-weight:800">8.000 m² (0,80 ha)</div>
+          <div class="preset-row">
+            <button onclick="setPreset(8000)" class="preset-btn">Año 1 · 8.000 m²</button>
+            <button onclick="setPreset(20000)" class="preset-btn">Año 2 · 20.000 m²</button>
+            <button onclick="setPreset(35000)" class="preset-btn">Año 3 · 35.000 m²</button>
+          </div>
+        </div>
+        <div class="res-grid">
+          <div class="res-card"><div style="font-size:12px;color:#a7f3d0">Agua Ahorrada/Año</div><div id="waterSaved" class="res-val">1.728 m³</div></div>
+          <div class="res-card"><div style="font-size:12px;color:#a7f3d0">Cosecha Anual</div><div id="prodEst" class="res-val">24.000 kg</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section container">
+    <span class="sec-tag">Transparencia Digital</span>
+    <h2 class="sec-title">Portal de Trazabilidad por Lote (QR)</h2>
+    <div class="qr-box">
+      <select id="loteSelect" onchange="renderLote()">
+        <option value="LOTE-2027-01">LOTE-2027-01 · Judía Verde Gina / Perona (La Selva, Girona)</option>
+        <option value="LOTE-2027-02">LOTE-2027-02 · Judía Verde Bobby (Campaña Contraestación)</option>
+        <option value="LOTE-2026-REF">LOTE-2026-REF · Validación Agronómica (ÇKS Ref. 450-839)</option>
+      </select>
+      <div id="loteCard" class="qr-grid"></div>
+    </div>
+  </section>
+
+  <section class="section container" style="padding-top:0">
+    <h2 class="sec-title">Escalabilidad y Capacidad Productiva (Girona)</h2>
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr><th>Indicador</th><th>Año 1</th><th>Año 2</th><th>Año 3</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Superficie</strong></td><td>8.000 m² (0,8 ha)</td><td>20.000 m² (2,0 ha)</td><td>35.000 m² (3,5 ha)</td></tr>
+          <tr><td><strong>Judía Verde</strong></td><td style="color:#047857;font-weight:800">24.000 kg</td><td style="color:#047857;font-weight:800">64.000 kg</td><td style="color:#047857;font-weight:800">115.000 kg</td></tr>
+          <tr><td><strong>Tecnología</strong></td><td>Sensores EC/pH</td><td>Clima VPD/PAR + QR</td><td>IoT + Contratos B2B</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="contacto" class="section container" style="padding-top:0">
+    <div class="contact-box">
+      <span class="sec-tag" style="text-align:left">Alianzas y Distribución</span>
+      <h2 style="font-size:24px;font-weight:800;margin:6px 0 12px">Contacto Comercial B2B</h2>
+      <p style="font-size:14px;color:#475569;margin-bottom:16px"><strong>Promotor:</strong> NEVZAT AYHAN · AGROSMART ESPAÑA<br><strong>Sede:</strong> C/ del Pintor Huguet, 1, 1º B - 17310 Lloret de Mar (Girona)<br><strong>Tel:</strong> +34 662 678 680 · <strong>Email:</strong> nevzatayhan2010@hotmail.com</p>
+      <form onsubmit="event.preventDefault();document.getElementById('formMsg').style.display='block'">
+        <input type="text" required placeholder="Empresa / Mayorista (ej. Mercabarna)" />
+        <input type="email" required placeholder="Correo electrónico corporativo" />
+        <textarea rows="3" placeholder="Volumen semanal estimado (kg) o consulta..."></textarea>
+        <button type="submit" class="submit-btn">Solicitar Ficha Técnica B2B</button>
+        <p id="formMsg" style="display:none;color:#047857;font-size:13px;font-weight:700;margin-top:10px;text-align:center">Solicitud registrada. Contactaremos en menos de 24h.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p style="color:#fff;font-weight:700;margin-bottom:4px">AGROSMART ESPAÑA · AgriTech & Eficiencia Hídrica</p>
+    <p>© 2026 Todos los derechos reservados · Lloret de Mar, Girona (Cataluña, España)</p>
+  </footer>
+
+  <script>
+    const lotes={"LOTE-2027-01":{ahorro:"36,4%",ec:"1,85 dS/m",ph:"6,1",fito:"Residuo Cero",origen:"La Selva, Girona"},"LOTE-2027-02":{ahorro:"38,2%",ec:"1,90 dS/m",ph:"6,0",fito:"Control Biológico",origen:"La Selva, Girona"},"LOTE-2026-REF":{ahorro:"34,0%",ec:"1,80 dS/m",ph:"6,2",fito:"Auditoría ÇKS OK",origen:"Piloto Validado"}};
+    function renderLote(){const d=lotes[document.getElementById("loteSelect").value];document.getElementById("loteCard").innerHTML=`<div><span style="font-size:11px;color:#475569;display:block">Ahorro Hídrico</span><strong style="color:#047857;font-size:16px">${d.ahorro}</strong></div><div><span style="font-size:11px;color:#475569;display:block">EC / pH</span><strong>${d.ec} · ${d.ph}</strong></div><div><span style="font-size:11px;color:#475569;display:block">Fitosanitario</span><strong>${d.fito}</strong></div><div><span style="font-size:11px;color:#475569;display:block">Origen Km 0</span><strong>${d.origen}</strong></div>`}
+    function updateSim(){const a=parseInt(document.getElementById("areaRange").value);document.getElementById("areaDisplay").innerText=`${a.toLocaleString('es-ES')} m² (${(a/10000).toFixed(2)} ha)`;document.getElementById("waterSaved").innerText=`${Math.round(a*0.216).toLocaleString('es-ES')} m³`;document.getElementById("prodEst").innerText=`${Math.round(a*3).toLocaleString('es-ES')} kg`}
+    function setPreset(v){document.getElementById("areaRange").value=v;updateSim()}
+    const i18n={es:{hero_badge:"AgriTech · La Selva, Girona (Cataluña)",hero_title:"Agricultura Protegida de Alta Eficiencia Hídrica y Suministro B2B Km 0",hero_sub:"Producción desestacionalizada de judía verde (Phaseolus vulgaris) mediante fertirrigación en circuito cerrado y control climático automatizado, reduciendo el consumo hídrico entre un 32% y un 40%.",hero_cta1:"Calcular Ahorro Hídrico",hero_cta2:"Suministro Mayorista B2B"},ca:{hero_badge:"AgriTech · La Selva, Girona (Catalunya)",hero_title:"Agricultura Protegida d'Alta Eficiència Hídrica i Subministrament B2B Km 0",hero_sub:"Producció desestacionalitzada de mongeta tendra mitjançant fertirrigació en circuit tancat i control climàtic automatitzat, reduint el consum d'aigua un 32%-40%.",hero_cta1:"Calcular Estalvi Hídric",hero_cta2:"Subministrament Majorista B2B"},en:{hero_badge:"AgriTech · La Selva, Girona (Catalonia)",hero_title:"High Water-Efficiency Protected Agriculture & Km 0 B2B Supply",hero_sub:"Year-round green bean production using closed-loop fertigation and automated VPD/PAR climate control, reducing water consumption by 32% to 40%.",hero_cta1:"Calculate Water Savings",hero_cta2:"B2B Wholesale Supply"}};
+    function setLang(l){document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.getAttribute("data-i18n");if(i18n[l][k])e.innerText=i18n[l][k]});["es","ca","en"].forEach(x=>{document.getElementById("btn-"+x).className=x===l?"lang-btn active":"lang-btn"})}
+    renderLote();updateSim();
+  </script>
+</body>
+</html>
