@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGROSMART ESPAÑA | AgriTech, Eficiencia Hídrica y Suministro B2B</title>
+  <script src="https://tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-gradient { background: linear-gradient(135deg, #064e3b 0%, #047857 50%, #0f172a 100%); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-8 h-8 rounded-lg bg-emerald-700 text-white font-bold flex items-center justify-center">A</span>
+        <span class="font-bold text-lg tracking-tight text-slate-900">AGROSMART <span class="text-emerald-700">ESPAÑA</span></span>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+        <a href="#tecnologia" class="hover:text-emerald-700" data-i18n="nav_tech">Tecnología</a>
+        <a href="#simulador" class="hover:text-emerald-700" data-i18n="nav_sim">Simulador Hídrico</a>
+        <a href="#trazabilidad" class="hover:text-emerald-700" data-i18n="nav_qr">Trazabilidad QR</a>
+        <a href="#trayectoria" class="hover:text-emerald-700" data-i18n="nav_track">Trayectoria</a>
+        <a href="#contacto" class="hover:text-emerald-700" data-i18n="nav_contact">Contacto B2B</a>
+      </nav>
+      <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold">
+        <button onclick="setLang('es')" id="btn-es" class="px-2 py-1 rounded bg-emerald-700 text-white">ES</button>
+        <button onclick="setLang('ca')" id="btn-ca" class="px-2 py-1 rounded text-slate-600 hover:text-slate-900">CA</button>
+        <button onclick="setLang('en')" id="btn-en" class="px-2 py-1 rounded text-slate-600 hover:text-slate-900">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-gradient text-white py-20 px-4">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-200 text-xs font-semibold mb-4" data-i18n="hero_badge">
+          AgriTech · La Selva, Girona (Cataluña)
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-6" data-i18n="hero_title">
+          Agricultura Protegida de Alta Eficiencia Hídrica y Suministro B2B Km 0
+        </h1>
+        <p class="text-slate-200 text-lg mb-8 leading-relaxed" data-i18n="hero_sub">
+          Producción desestacionalizada de judía verde (Phaseolus vulgaris) mediante fertirrigación en circuito cerrado y control climático automatizado, reduciendo el consumo hídrico entre un 32% y un 40%.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#simulador" class="px-6 py-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition" data-i18n="hero_cta1">
+            Calcular Ahorro Hídrico
+          </a>
+          <a href="#contacto" class="px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 font-semibold transition" data-i18n="hero_cta2">
+            Suministro Mayorista B2B
+          </a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white/10 backdrop-blur border border-white/15 p-6 rounded-2xl">
+          <div class="text-3xl font-extrabold text-emerald-300">32% - 40%</div>
+          <div class="text-sm text-slate-200 mt-1" data-i18n="kpi_1">Ahorro hídrico certificado en circuito cerrado</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur border border-white/15 p-6 rounded-2xl">
+          <div class="text-3xl font-extrabold text-emerald-300">-50%</div>
+          <div class="text-sm text-slate-200 mt-1" data-i18n="kpi_2">Reducción de estrés térmico (VPD / PAR)</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur border border-white/15 p-6 rounded-2xl">
+          <div class="text-3xl font-extrabold text-emerald-300">48.861 m²</div>
+          <div class="text-sm text-slate-200 mt-1" data-i18n="kpi_3">Superficie productiva previa acreditada (ÇKS)</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur border border-white/15 p-6 rounded-2xl">
+          <div class="text-3xl font-extrabold text-emerald-300">115.000 kg</div>
+          <div class="text-sm text-slate-200 mt-1" data-i18n="kpi_4">Capacidad proyectada Año 3 en Girona</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGIA ENISA -->
+  <section id="tecnologia" class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <h2 class="text-3xl font-bold text-slate-900 mb-3" data-i18n="tech_title">Componente Innovador y Diferenciación Tecnológica</h2>
+      <p class="text-slate-600" data-i18n="tech_sub">Transferencia de know-how agronómico intensivo hacia un modelo digitalizado de agricultura de precisión en Cataluña.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xl mb-5">01</div>
+        <h3 class="text-xl font-bold mb-3" data-i18n="t1_title">Fertirrigación en Circuito Cerrado</h3>
+        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="t1_desc">
+          Riego localizado por goteo combinado con acolchado plástico integral y monitorización continua en tiempo real de conductividad eléctrica (EC), pH y humedad radicular.
+        </p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xl mb-5">02</div>
+        <h3 class="text-xl font-bold mb-3" data-i18n="t2_title">Control Climático VPD y PAR</h3>
+        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="t2_desc">
+          Gestión dinámica de ventanas cenitales y pantallas térmicas plegables que optimizan la radiación fotosintéticamente activa y permiten producción contraestación.
+        </p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xl mb-5">03</div>
+        <h3 class="text-xl font-bold mb-3" data-i18n="t3_title">Trazabilidad QR y Producto Km 0</h3>
+        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="t3_desc">
+          Registro digital por lote de insumos, huella hídrica y parámetros fitosanitarios para cadenas de distribución y mercados mayoristas (Mercabarna) sin intermediarios.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULADOR DE AHORRO HIDRICO -->
+  <section id="simulador" class="py-16 px-4 bg-emerald-950 text-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-2" data-i18n="sim_title">Simulador de Eficiencia Hídrica y Producción</h2>
+        <p class="text-emerald-200 text-sm" data-i18n="sim_sub">Calcule el impacto de nuestro sistema tecnificado según la superficie de cultivo protegida.</p>
+      </div>
+      <div class="bg-white/10 border border-white/15 rounded-2xl p-6 sm:p-10 grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <label class="block text-sm font-medium text-emerald-200 mb-2" data-i18n="sim_label">Superficie de Invernadero Tecnificado (m²)</label>
+          <input type="range" id="areaRange" min="2000" max="50000" step="1000" value="8000" oninput="updateSim()" class="w-full accent-emerald-400 cursor-pointer" />
+          <div class="flex justify-between text-xs text-emerald-300 mt-2">
+            <span>2.000 m²</span>
+            <span id="areaDisplay" class="text-lg font-bold text-white">8.000 m² (0,8 ha)</span>
+            <span>50.000 m²</span>
+          </div>
+          <div class="mt-6 flex gap-2 flex-wrap">
+            <button onclick="setPreset(8000)" class="px-3 py-1.5 rounded bg-emerald-700 hover:bg-emerald-600 text-xs font-semibold">Año 1: 8.000 m²</button>
+            <button onclick="setPreset(20000)" class="px-3 py-1.5 rounded bg-emerald-700 hover:bg-emerald-600 text-xs font-semibold">Año 2: 20.000 m²</button>
+            <button onclick="setPreset(35000)" class="px-3 py-1.5 rounded bg-emerald-700 hover:bg-emerald-600 text-xs font-semibold">Año 3: 35.000 m²</button>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-slate-900/70 p-4 rounded-xl border border-emerald-500/30">
+            <div class="text-xs text-emerald-300" data-i18n="sim_res1">Agua Ahorrada / Año (~36%)</div>
+            <div id="waterSaved" class="text-2xl font-extrabold text-white mt-1">1.728 m³</div>
+          </div>
+          <div class="bg-slate-900/70 p-4 rounded-xl border border-emerald-500/30">
+            <div class="text-xs text-emerald-300" data-i18n="sim_res2">Producción Estimada (Judía Verde)</div>
+            <div id="prodEst" class="text-2xl font-extrabold text-emerald-400 mt-1">24.000 kg</div>
+          </div>
+          <div class="bg-slate-900/70 p-4 rounded-xl border border-emerald-500/30 sm:col-span-2">
+            <div class="text-xs text-emerald-300" data-i18n="sim_res3">Reducción de Huella Hídrica por kg Producido</div>
+            <div class="text-lg font-bold text-white mt-1">-36,5% vs. cultivo convencional</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAZABILIDAD DIGITAL QR -->
