@@ -4,232 +4,199 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AGROSMART ESPAÑA | AgriTech & Eficiencia Hídrica B2B</title>
-  <script src="https://tailwindcss.com"></script>
-  <link href="https://googleapis.com" rel="stylesheet">
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-    .hero-bg {
-      background-image: linear-gradient(to right, rgba(6, 40, 30, 0.92) 0%, rgba(6, 40, 30, 0.72) 55%, rgba(6, 40, 30, 0.45) 100%),
-      url('https://unsplash.com');
-      background-size: cover;
-      background-position: center;
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f4f7f5;color:#1e293b;line-height:1.5}
+    a{text-decoration:none}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid #e2e8f0;padding:12px 16px}
+    .nav-wrap{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo-box{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#059669,#064e3b);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:18px}
+    .brand-title{font-weight:800;font-size:16px;color:#0f172a;display:block;line-height:1.1}
+    .brand-sub{font-size:10px;font-weight:700;color:#059669;letter-spacing:1px;text-transform:uppercase}
+    .lang-group{display:flex;gap:4px;background:#f1f5f9;padding:4px;border-radius:10px}
+    .lang-btn{border:none;padding:5px 9px;border-radius:7px;font-size:11px;font-weight:700;cursor:pointer;background:transparent;color:#475569}
+    .lang-btn.active{background:#047857;color:#fff}
+    .hero{background:linear-gradient(135deg,rgba(4,47,36,0.92),rgba(6,78,59,0.85)),url('https://pexels.com') center/cover no-repeat;color:#fff;padding:56px 16px}
+    .container{max-width:1100px;margin:0 auto}
+    .badge{display:inline-block;background:rgba(16,185,129,0.2);border:1px solid rgba(52,211,153,0.4);color:#a7f3d0;font-size:12px;font-weight:700;padding:6px 14px;border-radius:99px;margin-bottom:18px}
+    .hero h1{font-size:clamp(26px,5vw,44px);font-weight:800;line-height:1.15;margin-bottom:16px}
+    .hero p{color:#e2e8f0;font-size:15px;max-width:680px;margin-bottom:26px}
+    .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+    .btn-primary{background:#10b981;color:#022c22;font-weight:800;padding:13px 22px;border-radius:12px;font-size:14px;display:inline-block}
+    .btn-secondary{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);color:#fff;font-weight:700;padding:13px 22px;border-radius:12px;font-size:14px;display:inline-block}
+    .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
+    .kpi-card{background:rgba(255,255,255,0.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.18);padding:18px;border-radius:16px}
+    .kpi-num{font-size:24px;font-weight:800;color:#6ee7b7}
+    .kpi-txt{font-size:12px;color:#e2e8f0;margin-top:4px}
+    .section{padding:56px 16px}
+    .sec-tag{color:#059669;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;display:block;text-align:center}
+    .sec-title{font-size:26px;font-weight:800;color:#0f172a;text-align:center;margin:6px 0 28px}
+    .cards-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+    .card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 4px 14px rgba(15,23,42,0.05)}
+    .card img{width:100%;height:190px;object-fit:cover;display:block;background:#064e3b}
+    .card-body{padding:20px}
+    .pill{display:inline-block;background:#d1fae5;color:#065f46;font-size:11px;font-weight:800;padding:4px 10px;border-radius:99px;margin-bottom:10px}
+    .card h3{font-size:18px;font-weight:800;color:#0f172a;margin-bottom:8px}
+    .card p{font-size:14px;color:#475569}
+    .sim-sec{background:linear-gradient(135deg,#022c22,#064e3b);color:#fff;padding:56px 16px}
+    .sim-box{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);border-radius:22px;padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;align-items:center}
+    input[type=range]{width:100%;accent-color:#34d399;margin:10px 0}
+    .preset-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .preset-btn{background:#059669;color:#fff;border:none;padding:8px 12px;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer}
+    .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .res-card{background:rgba(2,44,34,0.75);border:1px solid rgba(52,211,153,0.3);padding:16px;border-radius:14px}
+    .res-val{font-size:22px;font-weight:800;color:#6ee7b7;margin-top:4px}
+    .qr-box,.contact-box{background:#fff;border-radius:20px;padding:24px;border:1px solid #e2e8f0;box-shadow:0 4px 14px rgba(15,23,42,0.04)}
+    select,input[type=text],input[type=email],textarea{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:12px;font-size:14px;margin-bottom:12px;background:#f8fafc}
+    .qr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;background:#ecfdf5;border:1px solid #a7f3d0;padding:16px;border-radius:14px}
+    table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0;font-size:13px}
+    th{background:#064e3b;color:#fff;padding:12px;text-align:left}
+    td{padding:12px;border-bottom:1px solid #e2e8f0}
+    .submit-btn{width:100%;background:#047857;color:#fff;border:none;padding:14px;border-radius:12px;font-weight:800;font-size:14px;cursor:pointer}
+    footer{background:#0f172a;color:#94a3b8;text-align:center;padding:28px 16px;font-size:12px}
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
-
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-800 text-white font-extrabold flex items-center justify-center shadow-sm">A</div>
-        <div>
-          <span class="font-extrabold text-lg tracking-tight text-slate-900 block leading-none">AGROSMART</span>
-          <span class="text-[10px] font-bold tracking-widest text-emerald-700 uppercase">España · Girona</span>
-        </div>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <div class="brand">
+        <div class="logo-box">A</div>
+        <div><span class="brand-title">AGROSMART</span><span class="brand-sub">España · Girona</span></div>
       </div>
-      <nav class="hidden md:flex gap-7 text-sm font-semibold text-slate-600">
-        <a href="#tecnologia" class="hover:text-emerald-700 transition">Tecnología</a>
-        <a href="#simulador" class="hover:text-emerald-700 transition">Simulador Hídrico</a>
-        <a href="#trazabilidad" class="hover:text-emerald-700 transition">Trazabilidad QR</a>
-        <a href="#trayectoria" class="hover:text-emerald-700 transition">Plan 3 Años</a>
-        <a href="#contacto" class="hover:text-emerald-700 transition">Contacto B2B</a>
-      </nav>
-      <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl text-xs font-bold">
-        <button onclick="setLang('es')" id="btn-es" class="px-2.5 py-1 rounded-lg bg-emerald-700 text-white shadow-sm">ES</button>
-        <button onclick="setLang('ca')" id="btn-ca" class="px-2.5 py-1 rounded-lg text-slate-600 hover:text-slate-900">CA</button>
-        <button onclick="setLang('en')" id="btn-en" class="px-2.5 py-1 rounded-lg text-slate-600 hover:text-slate-900">EN</button>
+      <div class="lang-group">
+        <button onclick="setLang('es')" id="btn-es" class="lang-btn active">ES</button>
+        <button onclick="setLang('ca')" id="btn-ca" class="lang-btn">CA</button>
+        <button onclick="setLang('en')" id="btn-en" class="lang-btn">EN</button>
       </div>
     </div>
   </header>
 
-  <section class="hero-bg text-white py-20 sm:py-28 px-4">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-7">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-200 text-xs font-bold mb-6">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span data-i18n="hero_badge">AgriTech · La Selva, Girona (Cataluña)</span>
-        </div>
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.12] tracking-tight mb-6" data-i18n="hero_title">
-          Agricultura Protegida de Alta Eficiencia Hídrica y Suministro B2B Km 0
-        </h1>
-        <p class="text-slate-200 text-base sm:text-lg mb-8 leading-relaxed max-w-2xl" data-i18n="hero_sub">
-          Producción desestacionalizada de judía verde (Phaseolus vulgaris) mediante fertirrigación en circuito cerrado y control climático automatizado, reduciendo el consumo hídrico entre un 32% y un 40%.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#simulador" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm shadow-lg shadow-emerald-950/40 transition" data-i18n="hero_cta1">
-            Calcular Ahorro Hídrico
-          </a>
-          <a href="#contacto" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 font-bold text-sm transition" data-i18n="hero_cta2">
-            Suministro Mayorista B2B
-          </a>
-        </div>
+  <section class="hero">
+    <div class="container">
+      <span class="badge" data-i18n="hero_badge">AgriTech · La Selva, Girona (Cataluña)</span>
+      <h1 data-i18n="hero_title">Agricultura Protegida de Alta Eficiencia Hídrica y Suministro B2B Km 0</h1>
+      <p data-i18n="hero_sub">Producción desestacionalizada de judía verde (Phaseolus vulgaris) mediante fertirrigación en circuito cerrado y control climático automatizado, reduciendo el consumo hídrico entre un 32% y un 40%.</p>
+      <div class="btn-row">
+        <a href="#simulador" class="btn-primary" data-i18n="hero_cta1">Calcular Ahorro Hídrico</a>
+        <a href="#contacto" class="btn-secondary" data-i18n="hero_cta2">Suministro Mayorista B2B</a>
       </div>
-      <div class="lg:col-span-5 grid grid-cols-2 gap-4">
-        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-xl">
-          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-300">32%-40%</div>
-          <div class="text-xs sm:text-sm text-slate-200 mt-2 font-medium">Ahorro hídrico en circuito cerrado</div>
-        </div>
-        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-xl">
-          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-300">-50%</div>
-          <div class="text-xs sm:text-sm text-slate-200 mt-2 font-medium">Reducción estrés térmico (VPD/PAR)</div>
-        </div>
-        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-xl">
-          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-300">48.861 m²</div>
-          <div class="text-xs sm:text-sm text-slate-200 mt-2 font-medium">Superficie previa acreditada (ÇKS)</div>
-        </div>
-        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-xl">
-          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-300">115.000 kg</div>
-          <div class="text-xs sm:text-sm text-slate-200 mt-2 font-medium">Capacidad proyectada Año 3</div>
-        </div>
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-num">32%-40%</div><div class="kpi-txt">Ahorro hídrico certificado</div></div>
+        <div class="kpi-card"><div class="kpi-num">-50%</div><div class="kpi-txt">Estrés térmico (VPD/PAR)</div></div>
+        <div class="kpi-card"><div class="kpi-num">48.861 m²</div><div class="kpi-txt">Superficie previa ÇKS</div></div>
+        <div class="kpi-card"><div class="kpi-num">115.000 kg</div><div class="kpi-txt">Capacidad Año 3 Girona</div></div>
       </div>
     </div>
   </section>
-    <section id="tecnologia" class="py-20 px-4 max-w-7xl mx-auto">
-    <div class="text-center max-w-3xl mx-auto mb-14">
-      <span class="text-emerald-700 font-bold text-xs uppercase tracking-widest">Innovación Agronómica</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Tecnología de Precisión y Cultivo Sostenible</h2>
-      <p class="text-slate-600 text-sm sm:text-base">Transferencia de experiencia agronómica intensiva hacia invernaderos tecnificados de alto rendimiento en Cataluña.</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200/80 hover:shadow-xl transition group">
-        <div class="h-52 overflow-hidden relative">
-          <img src="https://unsplash.com" alt="Fertirrigación" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-          <span class="absolute top-3 left-3 bg-emerald-700 text-white text-xs font-bold px-3 py-1 rounded-full">01 · Circuito Cerrado</span>
-        </div>
-        <div class="p-6">
-          <h3 class="font-extrabold text-lg text-slate-900 mb-2">Fertirrigación de Precisión</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Riego localizado por goteo con acolchado integral y sensores en tiempo real de EC, pH y humedad radicular para eliminar lixiviados.</p>
+  <section class="section container">
+    <span class="sec-tag">Innovación Agronómica</span>
+    <h2 class="sec-title">Tecnología de Precisión y Cultivo Sostenible</h2>
+    <div class="cards-3">
+      <div class="card">
+        <img src="https://pexels.com" alt="Fertirrigación" />
+        <div class="card-body">
+          <span class="pill">01 · Circuito Cerrado</span>
+          <h3>Fertirrigación de Precisión</h3>
+          <p>Riego localizado por goteo con acolchado integral y sensores en tiempo real de EC, pH y humedad radicular.</p>
         </div>
       </div>
-
-      <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200/80 hover:shadow-xl transition group">
-        <div class="h-52 overflow-hidden relative">
-          <img src="https://unsplash.com" alt="Control Climático" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-          <span class="absolute top-3 left-3 bg-emerald-700 text-white text-xs font-bold px-3 py-1 rounded-full">02 · Clima VPD / PAR</span>
-        </div>
-        <div class="p-6">
-          <h3 class="font-extrabold text-lg text-slate-900 mb-2">Control Climático Automatizado</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Gestión dinámica de ventanas cenitales y pantallas térmicas plegables que reducen el estrés térmico un 50% y permiten cosecha contraestación.</p>
+      <div class="card">
+        <img src="https://pexels.com" alt="Invernadero" />
+        <div class="card-body">
+          <span class="pill">02 · Clima VPD / PAR</span>
+          <h3>Control Climático Automatizado</h3>
+          <p>Ventanas cenitales y pantallas térmicas plegables que reducen el estrés térmico un 50% para cosecha contraestación.</p>
         </div>
       </div>
-
-      <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200/80 hover:shadow-xl transition group">
-        <div class="h-52 overflow-hidden relative">
-          <img src="https://unsplash.com" alt="Cosecha Judía Verde" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-          <span class="absolute top-3 left-3 bg-emerald-700 text-white text-xs font-bold px-3 py-1 rounded-full">03 · B2B Km 0</span>
-        </div>
-        <div class="p-6">
-          <h3 class="font-extrabold text-lg text-slate-900 mb-2">Judía Verde Fresca y Trazabilidad QR</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Suministro directo en menos de 24h a Mercabarna y cadenas de distribución con pasaporte digital QR de huella hídrica y residuo cero.</p>
+      <div class="card">
+        <img src="https://pexels.com" alt="Judía Verde" />
+        <div class="card-body">
+          <span class="pill">03 · B2B Km 0</span>
+          <h3>Judía Verde Fresca y Trazabilidad QR</h3>
+          <p>Suministro directo en menos de 24h a Mercabarna y cadenas de distribución con pasaporte digital de residuo cero.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="simulador" class="py-20 px-4 bg-gradient-to-br from-emerald-950 via-teal-950 to-slate-900 text-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-10">
-        <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest">Impacto Ambiental y Productivo</span>
-        <h2 class="text-3xl font-extrabold mt-2">Simulador de Eficiencia Hídrica</h2>
-      </div>
-      <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-3xl p-6 sm:p-10 grid md:grid-cols-2 gap-8 items-center shadow-2xl">
+  <section id="simulador" class="sim-sec">
+    <div class="container">
+      <h2 class="sec-title" style="color:#fff">Simulador de Eficiencia Hídrica</h2>
+      <div class="sim-box">
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-emerald-300 mb-3">Superficie de Invernadero Tecnificado</label>
-          <input type="range" id="areaRange" min="2000" max="50000" step="1000" value="8000" oninput="updateSim()" class="w-full accent-emerald-400 cursor-pointer" />
-          <div id="areaDisplay" class="text-2xl font-extrabold text-white mt-3">8.000 m² (0,80 ha)</div>
-          <div class="mt-5 flex gap-2 flex-wrap">
-            <button onclick="setPreset(8000)" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-bold transition">Año 1 · 8.000 m²</button>
-            <button onclick="setPreset(20000)" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-bold transition">Año 2 · 20.000 m²</button>
-            <button onclick="setPreset(35000)" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-bold transition">Año 3 · 35.000 m²</button>
+          <label style="font-size:12px;font-weight:700;color:#6ee7b7">SUPERFICIE DE INVERNADERO (m²)</label>
+          <input type="range" id="areaRange" min="2000" max="50000" step="1000" value="8000" oninput="updateSim()" />
+          <div id="areaDisplay" style="font-size:20px;font-weight:800">8.000 m² (0,80 ha)</div>
+          <div class="preset-row">
+            <button onclick="setPreset(8000)" class="preset-btn">Año 1 · 8.000 m²</button>
+            <button onclick="setPreset(20000)" class="preset-btn">Año 2 · 20.000 m²</button>
+            <button onclick="setPreset(35000)" class="preset-btn">Año 3 · 35.000 m²</button>
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-slate-950/60 p-5 rounded-2xl border border-emerald-500/30">
-            <div class="text-xs text-emerald-300 font-semibold">Agua Ahorrada / Año</div>
-            <div id="waterSaved" class="text-2xl sm:text-3xl font-extrabold text-white mt-1">1.728 m³</div>
-            <div class="text-[11px] text-slate-400 mt-1">-36% vs. convencional</div>
-          </div>
-          <div class="bg-slate-950/60 p-5 rounded-2xl border border-emerald-500/30">
-            <div class="text-xs text-emerald-300 font-semibold">Cosecha Anual Estimada</div>
-            <div id="prodEst" class="text-2xl sm:text-3xl font-extrabold text-emerald-400 mt-1">24.000 kg</div>
-            <div class="text-[11px] text-slate-400 mt-1">Judía verde calidad extra</div>
-          </div>
+        <div class="res-grid">
+          <div class="res-card"><div style="font-size:12px;color:#a7f3d0">Agua Ahorrada/Año</div><div id="waterSaved" class="res-val">1.728 m³</div></div>
+          <div class="res-card"><div style="font-size:12px;color:#a7f3d0">Cosecha Anual</div><div id="prodEst" class="res-val">24.000 kg</div></div>
         </div>
       </div>
     </div>
   </section>
-  <section id="trazabilidad" class="py-20 px-4 max-w-5xl mx-auto">
-    <div class="text-center mb-10">
-      <span class="text-emerald-700 font-bold text-xs uppercase tracking-widest">Transparencia Digital</span>
-      <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Portal de Trazabilidad por Lote (QR)</h2>
-    </div>
-    <div class="bg-white rounded-3xl shadow-md border border-slate-200 p-6 sm:p-8">
-      <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Seleccione un lote de producción para auditar parámetros:</label>
-      <select id="loteSelect" onchange="renderLote()" class="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold mb-6 bg-slate-50 focus:outline-none focus:border-emerald-600">
-        <option value="LOTE-2027-01">LOTE-2027-01 · Judía Verde Perona (Invernadero Piloto La Selva)</option>
+
+  <section class="section container">
+    <span class="sec-tag">Transparencia Digital</span>
+    <h2 class="sec-title">Portal de Trazabilidad por Lote (QR)</h2>
+    <div class="qr-box">
+      <select id="loteSelect" onchange="renderLote()">
+        <option value="LOTE-2027-01">LOTE-2027-01 · Judía Verde Perona (La Selva, Girona)</option>
         <option value="LOTE-2027-02">LOTE-2027-02 · Judía Verde Bobby (Campaña Contraestación)</option>
         <option value="LOTE-2026-REF">LOTE-2026-REF · Validación Agronómica (ÇKS Ref. 450-839)</option>
       </select>
-      <div id="loteCard" class="grid sm:grid-cols-4 gap-4 bg-emerald-50/70 p-5 rounded-2xl border border-emerald-200/80 text-sm"></div>
+      <div id="loteCard" class="qr-grid"></div>
     </div>
   </section>
 
-  <section id="trayectoria" class="py-16 px-4 bg-slate-100 border-y border-slate-200">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 text-center">Escalabilidad y Capacidad Productiva (Girona)</h2>
-      <div class="overflow-x-auto bg-white rounded-2xl shadow-sm border border-slate-200">
-        <table class="w-full text-left text-sm">
-          <thead class="bg-emerald-900 text-white">
-            <tr><th class="p-4">Indicador Estratégico</th><th class="p-4">Año 1 (Piloto)</th><th class="p-4">Año 2 (Consolidación)</th><th class="p-4">Año 3 (Expansión)</th></tr>
-          </thead>
-          <tbody class="divide-y divide-slate-200">
-            <tr><td class="p-4 font-bold text-slate-800">Superficie Tecnificada</td><td class="p-4">8.000 m² (0,8 ha)</td><td class="p-4">20.000 m² (2,0 ha)</td><td class="p-4">35.000 m² (3,5 ha)</td></tr>
-            <tr><td class="p-4 font-bold text-slate-800">Producción Judía Verde</td><td class="p-4 font-extrabold text-emerald-700">24.000 kg</td><td class="p-4 font-extrabold text-emerald-700">64.000 kg</td><td class="p-4 font-extrabold text-emerald-700">115.000 kg</td></tr>
-            <tr><td class="p-4 font-bold text-slate-800">Tecnología Implementada</td><td class="p-4">Sensores EC/pH + Circuito Cerrado</td><td class="p-4">Clima VPD/PAR + Etiquetado QR</td><td class="p-4">IoT Integral + Contratos B2B</td></tr>
-          </tbody>
-        </table>
-      </div>
+  <section class="section container" style="padding-top:0">
+    <h2 class="sec-title">Escalabilidad y Capacidad Productiva (Girona)</h2>
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr><th>Indicador</th><th>Año 1</th><th>Año 2</th><th>Año 3</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Superficie</strong></td><td>8.000 m² (0,8 ha)</td><td>20.000 m² (2,0 ha)</td><td>35.000 m² (3,5 ha)</td></tr>
+          <tr><td><strong>Judía Verde</strong></td><td style="color:#047857;font-weight:800">24.000 kg</td><td style="color:#047857;font-weight:800">64.000 kg</td><td style="color:#047857;font-weight:800">115.000 kg</td></tr>
+          <tr><td><strong>Tecnología</strong></td><td>Sensores EC/pH</td><td>Clima VPD/PAR + QR</td><td>IoT + Contratos B2B</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <section id="contacto" class="py-20 px-4 max-w-5xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-10 bg-white p-8 sm:p-10 rounded-3xl shadow-md border border-slate-200">
-      <div class="space-y-4">
-        <span class="text-emerald-700 font-bold text-xs uppercase tracking-widest">Alianzas y Distribución</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Contacto Comercial B2B</h2>
-        <p class="text-slate-600 text-sm leading-relaxed">Suministro directo Km 0 en Girona y Cataluña para mayoristas (Mercabarna), cadenas de alimentación y proyectos de eficiencia hídrica.</p>
-        <div class="pt-2 space-y-2 text-sm text-slate-700 border-t border-slate-100">
-          <p><strong>Promotor:</strong> NEVZAT AYHAN · AGROSMART ESPAÑA</p>
-          <p><strong>Sede:</strong> C/ del Pintor Huguet, 1, 1º B - 17310 Lloret de Mar (Girona)</p>
-          <p><strong>Teléfono:</strong> +34 662 678 680</p>
-          <p><strong>Email:</strong> nevzatayhan2010@hotmail.com</p>
-        </div>
-      </div>
-      <form onsubmit="event.preventDefault();document.getElementById('formMsg').classList.remove('hidden')" class="space-y-4 bg-slate-50 p-6 rounded-2xl border border-slate-200/80">
-        <input type="text" required placeholder="Empresa / Mayorista (ej. Mercabarna)" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm" />
-        <input type="email" required placeholder="Correo electrónico corporativo" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm" />
-        <textarea rows="3" placeholder="Volumen semanal estimado (kg) o consulta..." class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm"></textarea>
-        <button type="submit" class="w-full py-3.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold text-sm shadow-md transition">Solicitar Ficha Técnica B2B</button>
-        <p id="formMsg" class="hidden text-xs text-emerald-700 font-bold text-center">Solicitud registrada correctamente. Contactaremos en menos de 24h.</p>
+  <section id="contacto" class="section container" style="padding-top:0">
+    <div class="contact-box">
+      <span class="sec-tag" style="text-align:left">Alianzas y Distribución</span>
+      <h2 style="font-size:24px;font-weight:800;margin:6px 0 12px">Contacto Comercial B2B</h2>
+      <p style="font-size:14px;color:#475569;margin-bottom:16px"><strong>Promotor:</strong> NEVZAT AYHAN · AGROSMART ESPAÑA<br><strong>Sede:</strong> C/ del Pintor Huguet, 1, 1º B - 17310 Lloret de Mar (Girona)<br><strong>Tel:</strong> +34 662 678 680 · <strong>Email:</strong> nevzatayhan2010@hotmail.com</p>
+      <form onsubmit="event.preventDefault();document.getElementById('formMsg').style.display='block'">
+        <input type="text" required placeholder="Empresa / Mayorista (ej. Mercabarna)" />
+        <input type="email" required placeholder="Correo electrónico corporativo" />
+        <textarea rows="3" placeholder="Volumen semanal estimado (kg) o consulta..."></textarea>
+        <button type="submit" class="submit-btn">Solicitar Ficha Técnica B2B</button>
+        <p id="formMsg" style="display:none;color:#047857;font-size:13px;font-weight:700;margin-top:10px;text-align:center">Solicitud registrada. Contactaremos en menos de 24h.</p>
       </form>
     </div>
   </section>
 
-  <footer class="bg-slate-950 text-slate-400 py-8 text-center text-xs">
-    <p class="font-semibold text-slate-300 mb-1">AGROSMART ESPAÑA · AgriTech & Eficiencia Hídrica</p>
+  <footer>
+    <p style="color:#fff;font-weight:700;margin-bottom:4px">AGROSMART ESPAÑA · AgriTech & Eficiencia Hídrica</p>
     <p>© 2026 Todos los derechos reservados · Lloret de Mar, Girona (Cataluña, España)</p>
   </footer>
 
   <script>
     const lotes={"LOTE-2027-01":{ahorro:"36,4%",ec:"1,85 dS/m",ph:"6,1",fito:"Residuo Cero",origen:"La Selva, Girona"},"LOTE-2027-02":{ahorro:"38,2%",ec:"1,90 dS/m",ph:"6,0",fito:"Control Biológico",origen:"La Selva, Girona"},"LOTE-2026-REF":{ahorro:"34,0%",ec:"1,80 dS/m",ph:"6,2",fito:"Auditoría ÇKS OK",origen:"Piloto Validado"}};
-    function renderLote(){const d=lotes[document.getElementById("loteSelect").value];document.getElementById("loteCard").innerHTML=`<div><span class="text-xs text-slate-500 block font-medium">Ahorro Hídrico</span><strong class="text-emerald-700 text-base font-extrabold">${d.ahorro}</strong></div><div><span class="text-xs text-slate-500 block font-medium">EC / pH</span><strong class="text-slate-900">${d.ec} · ${d.ph}</strong></div><div><span class="text-xs text-slate-500 block font-medium">Fitosanitario</span><strong class="text-slate-900">${d.fito}</strong></div><div><span class="text-xs text-slate-500 block font-medium">Origen Km 0</span><strong class="text-slate-900">${d.origen}</strong></div>`}
+    function renderLote(){const d=lotes[document.getElementById("loteSelect").value];document.getElementById("loteCard").innerHTML=`<div><span style="font-size:11px;color:#475569;display:block">Ahorro Hídrico</span><strong style="color:#047857;font-size:16px">${d.ahorro}</strong></div><div><span style="font-size:11px;color:#475569;display:block">EC / pH</span><strong>${d.ec} · ${d.ph}</strong></div><div><span style="font-size:11px;color:#475569;display:block">Fitosanitario</span><strong>${d.fito}</strong></div><div><span style="font-size:11px;color:#475569;display:block">Origen Km 0</span><strong>${d.origen}</strong></div>`}
     function updateSim(){const a=parseInt(document.getElementById("areaRange").value);document.getElementById("areaDisplay").innerText=`${a.toLocaleString('es-ES')} m² (${(a/10000).toFixed(2)} ha)`;document.getElementById("waterSaved").innerText=`${Math.round(a*0.216).toLocaleString('es-ES')} m³`;document.getElementById("prodEst").innerText=`${Math.round(a*3).toLocaleString('es-ES')} kg`}
     function setPreset(v){document.getElementById("areaRange").value=v;updateSim()}
     const i18n={es:{hero_badge:"AgriTech · La Selva, Girona (Cataluña)",hero_title:"Agricultura Protegida de Alta Eficiencia Hídrica y Suministro B2B Km 0",hero_sub:"Producción desestacionalizada de judía verde (Phaseolus vulgaris) mediante fertirrigación en circuito cerrado y control climático automatizado, reduciendo el consumo hídrico entre un 32% y un 40%.",hero_cta1:"Calcular Ahorro Hídrico",hero_cta2:"Suministro Mayorista B2B"},ca:{hero_badge:"AgriTech · La Selva, Girona (Catalunya)",hero_title:"Agricultura Protegida d'Alta Eficiència Hídrica i Subministrament B2B Km 0",hero_sub:"Producció desestacionalitzada de mongeta tendra mitjançant fertirrigació en circuit tancat i control climàtic automatitzat, reduint el consum d'aigua un 32%-40%.",hero_cta1:"Calcular Estalvi Hídric",hero_cta2:"Subministrament Majorista B2B"},en:{hero_badge:"AgriTech · La Selva, Girona (Catalonia)",hero_title:"High Water-Efficiency Protected Agriculture & Km 0 B2B Supply",hero_sub:"Year-round green bean production using closed-loop fertigation and automated VPD/PAR climate control, reducing water consumption by 32% to 40%.",hero_cta1:"Calculate Water Savings",hero_cta2:"B2B Wholesale Supply"}};
-    function setLang(l){document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.getAttribute("data-i18n");if(i18n[l][k])e.innerText=i18n[l][k]});["es","ca","en"].forEach(x=>{document.getElementById("btn-"+x).className=x===l?"px-2.5 py-1 rounded-lg bg-emerald-700 text-white shadow-sm":"px-2.5 py-1 rounded-lg text-slate-600 hover:text-slate-900"})}
+    function setLang(l){document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.getAttribute("data-i18n");if(i18n[l][k])e.innerText=i18n[l][k]});["es","ca","en"].forEach(x=>{document.getElementById("btn-"+x).className=x===l?"lang-btn active":"lang-btn"})}
     renderLote();updateSim();
   </script>
 </body>
 </html>
-
